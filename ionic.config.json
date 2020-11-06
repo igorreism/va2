@@ -1,0 +1,7 @@
+{
+  "name": "va2app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
