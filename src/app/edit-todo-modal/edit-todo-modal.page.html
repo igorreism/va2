@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Tarefa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form (ngSubmit)="submitForm()">
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Breve Descrição</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.description" name="description"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block">Salvar</ion-button>
+    </form>
+
+</ion-content>

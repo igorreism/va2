@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova Tarefa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <form >
+      <ion-item>
+        <ion-label position="floating">Imagem</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.image" name="image"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.value" name="value"></ion-input>
+      </ion-item>
+      <ion-button (click)="submitForm()" type="button" expand="block">Adicionar</ion-button>
+    </form> -->
+
+    <form >
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.title" name="title" (input)="bind_value_title($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Breve Descrição</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.description" name="description" (input)="bind_value_description($event)"></ion-input>
+      </ion-item>
+      <ion-button (click)="submitForm()" type="button" expand="block">Adicionar</ion-button>
+    </form>
+
+
+    <p>{{todo.title}}</p>
+
+</ion-content>

@@ -1,17 +1,56 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Listagem
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <h4 *ngIf="itemsTodo.length == 0">Nenhum item encontrando em estoque!</h4>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let todo of itemsTodo">
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="editTodoModal(todo)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="deleteTodo(todo)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options> 
+
+      <!-- <ion-item>
+        <ion-label>
+          <h2>{{ todo.image }}</h2>
+          <h3>{{ todo.title }}</h3>
+          <p>{{ todo.value }}</p>
+        </ion-label>
+      </ion-item> -->
+
+      <ion-card>
+        <img src="./madison.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Destination</ion-card-subtitle>
+          <ion-card-title>Madison, WI</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab (click)="presentNewTodoModal()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
